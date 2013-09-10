@@ -1,0 +1,181 @@
+/*********************************************************
+* Colours
+*/
+@yellow: #ffcd36;
+@lightyellow: #fff2cc;
+@darkyellow: #eab514;
+@orange: #ee8950;
+@darkgreen: #328f70;
+@blue: #27aae1;
+@red: #D93B3B;
+@green: #3fb58e;
+@grey: #4d4e53;
+@lightgrey: #e3eaee;
+@midgrey: #ddd;
+@white: #fff;
+@black: #000;
+
+/*********************************************************
+* Breakpoints
+*/
+@width-small: 320px;
+@width-medium: 480px;
+@width-large: 960px;
+@width-xlarge: 1540px;
+
+/*********************************************************
+* Bower Imports
+*/
+
+// Lesshat
+@import "bower_components/lesshat/lesshat";
+
+// Font Awesome
+// Use http://fortawesome.github.io/Font-Awesome/cheatsheet/ as a guide
+@import "bower_components/font-awesome/less/font-awesome";
+@FontAwesomePath: "/bower_components/font-awesome/font";
+
+/*********************************************************
+* Main
+*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+@gutter: 2%;
+@navy: #012437;
+
+body {
+  background: @green;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+}
+
+#container {
+  transition: opacity 0.2s ease-in;
+  &[data-loading="progress"] {
+    opacity: 0;
+  }
+  &[data-loading="done"] {
+    opacity: 1;
+  }
+}
+
+
+header {
+  background: @navy;
+  color: white;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.nav-expanded {
+  overflow: hidden;
+  .col {
+    float: left;
+    margin-right: @gutter;
+    margin-bottom: @gutter;
+    font-size: 14px;
+    line-height: 2.2;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  ul {
+    opacity: 0;
+    width: 0;
+  }
+  .first {
+    height: 50px;
+    line-height: 50px;
+    padding-right: 20px;
+    font-size: 16px;
+    transition: font-size 0.2s ease-in;
+  }
+}
+
+.wrapper {
+  .clearfix;
+  width: 1020px;
+  margin: 0 auto;
+}
+
+.nav-expanded[data-expanded=true] {
+  .wrapper {
+    margin-top: 20px;
+  }
+  .first {
+    color: @green;
+    font-size: 20px;
+  }
+
+  .col {
+    width: ((100% - (4 * @gutter)) / 5);
+  }
+
+  ul {
+    opacity: 1;
+    width: auto;
+    position: relative;
+  }
+  .first {
+    height: auto;
+    line-height: 1;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+}
+
+
+.bottom {
+  text-align: center;
+  color: @green;
+  font-size: 13px;
+  li {
+    display: inline-block;
+    padding: 15px;
+    .icon {
+      color: #FFF;
+      font-size: 18px;
+    }
+  }
+}
+
+/*********************************************************
+* Main
+*/
+
+
+#main {
+  .wrapper {
+    .clearfix;
+    width: 1020px;
+    margin: 40px auto;
+  }
+}
+
+h1 {
+  font-weight: 200;
+  color: #FFF;
+  font-size: 45px;
+}

@@ -1,0 +1,57 @@
+!!! 5
+html(lang="en")
+  head
+    title Test for t41
+    link(rel="stylesheet", href="main.css")
+  body
+    #container(data-loading="progress")
+      header
+        .nav-expanded(data-expanded="true")
+          .wrapper
+            .col
+              .first Explore
+              ul
+                li Gallery
+                li Webmaker tools
+                li People
+            .col
+              .first Make
+              ul
+                li
+                li Videos with Popcorn
+                li Webpages with Thimble
+                li Starter Makes
+            .col
+              .first Teach
+              ul
+                li Resources
+                li Resource Templates
+                li Mentors
+                li Web Literacy Standard
+            .col
+              .first Events
+              ul
+                li Event guides
+                li Maker Party
+            .col
+              .first About
+              ul
+                li
+                li Blog
+                li Get involved
+                li Partners
+                li Donate
+          .bottom
+            ul
+              li Privacy
+              li Legal
+              li Feedback
+              li Help
+              li: span.icon.icon-twitter
+              li: span.icon.icon-tumblr
+              li: span.icon.icon-google-plus
+              li: span.icon.icon-envelope
+      #main
+        .wrapper
+          h1 Get the skills to make something awesome on the web
+    script(src="/bower_components/requirejs/require.js", data-main="main")
