@@ -2,6 +2,7 @@
 html(lang="en")
   head
     title Test for t41
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700")
     link(rel="stylesheet", href="main.css")
   body
     #container(data-loading="progress")
@@ -65,37 +66,71 @@ html(lang="en")
       #main
         section.top
           .wrapper
-            video
-              source(controls, src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4")
-            h1 Get the skills to make something awesome on the web
-            p We'll show you to shape the web through making, teaching and becoming a part of the Webmakercommunity.
-            h2 Take the tour 
-              span.icon-angle-right
-        section.dark
+            video(controls)
+              source(src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4")
+              source(src="http://video.webmfiles.org/big-buck-bunny_trailer.webm")
+            .block
+              h1 Get the skills to make something awesome on the web
+              p We'll show you to shape the web through making, teaching and becoming a part of the Mozilla Webmaker community.
+              h2 Take the tour 
+                span.icon-angle-right
+                span.persona-button
+                  .tip
+                  .text Sign up
+        section.explain
           .wrapper
             .col#explore
-              h2 Explore
+              h2
+                span.icon.icon-random
+                br
+                | Explore
             .col#make
-              h2 Make
+              h2
+                span.icon.icon-hand-down
+                br
+                | Make
             .col#teach
-              h2 Teach
+              h2
+                span.icon.icon-book
+                br
+                | Teach
         section.featured
           .wrapper
-            h2 Featured make for #Halloween
+            .banner
+              h2 Featured make for 
+                a.featured-tag #Halloween
+              span Check out the full 
+                a(href="#") gallery 
+                span.icon-angle-right
             .featured-make
               img.thumbnail(src="http://stuff.webmaker.org/editorial-assets/backtoschool.jpg")
               .details
                 .title Back to School
                 .likes
-                  span.like-icon.icon-heart-empty
+                  span.like-icon.icon-heart-empty 
                   span 133 Likes
-                .author-date Popcorn make by @psummers created a month ago
-                .description I am headed back to school for professional development.
+                .author-date 
+                  img.pop-icon(src="http://dl.dropbox.com/u/29163874/Screenshots/l~.png")
+                  |Popcorn make by @psummers created a month ago
+                .description I am headed back to school for professional development. Yikes and here's a bit more to this sentence.
                 .author-details
                   img.avatar(src="http://t0.gstatic.com/images?q=tbn:ANd9GcS0kEhaeDOdxXAdPMv-tzFuNen0BEzVpQnBjWOZFTHgOD7DB8N2tg")
                   span.joined Joined August 2013
                 span.button.view-profile View profile 
                   span.icon-angle-right
+            .coming-up
+              p Coming up next week: 
+                a #Holidays
+              p To get featured here and on the gallery:
+              ol
+                li
+                  a Sign in 
+                  | or 
+                  a sign up
+                li
+                  a Tag your makes. 
+                  strong That's it!
+              p Deadlines are rolling on Mondays at 4pm EST.
         footer
           .wrapper
             p Blah blah blah
