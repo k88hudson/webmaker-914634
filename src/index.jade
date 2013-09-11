@@ -5,6 +5,9 @@ html(lang="en")
     link(rel="stylesheet", href="main.css")
   body
     #container(data-loading="progress")
+      #header
+        .wrapper
+          img(src="https://webmaker.org/img/logo.png")
       header
         .nav-expanded(data-expanded="true")
           .wrapper
@@ -41,6 +44,7 @@ html(lang="en")
                 li Get involved
                 li Partners
                 li Donate
+            span.dotdotdot
           .bottom
             ul
               li Privacy
@@ -51,7 +55,46 @@ html(lang="en")
               li: span.icon.icon-tumblr
               li: span.icon.icon-google-plus
               li: span.icon.icon-envelope
+          .social
+            ul
+              li: span.icon.icon-twitter
+              li: span.icon.icon-tumblr
+              li: span.icon.icon-google-plus
+              li: span.icon.icon-envelope
+
       #main
-        .wrapper
-          h1 Get the skills to make something awesome on the web
+        section.top
+          .wrapper
+            video
+              source(controls, src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4")
+            h1 Get the skills to make something awesome on the web
+            p We'll show you to shape the web through making, teaching and becoming a part of the Webmakercommunity.
+            h2 Take the tour 
+              span.icon-angle-right
+        section.dark
+          .wrapper
+            .col#explore
+              h2 Explore
+            .col#make
+              h2 Make
+            .col#teach
+              h2 Teach
+        section.featured
+          .wrapper
+            h2 Featured make for #Halloween
+            .featured-make
+              img.thumbnail(src="http://stuff.webmaker.org/editorial-assets/backtoschool.jpg")
+              .details
+                .title Back to School
+                .likes: span.like-icon.icon-heart-empty 133 Likes
+                .author-date Popcorn make by @psummers created a month ago
+                .description I am headed back to school for professional development.
+                .author-details
+                  img.avatar(src="http://t0.gstatic.com/images?q=tbn:ANd9GcS0kEhaeDOdxXAdPMv-tzFuNen0BEzVpQnBjWOZFTHgOD7DB8N2tg")
+                  span.joined Joined August 2013
+                span.button.view-profile View profile 
+                  span.icon-angle-right
+        footer
+          .wrapper
+            p Blah blah blah
     script(src="/bower_components/requirejs/require.js", data-main="main")

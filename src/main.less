@@ -62,10 +62,10 @@
 @navy: #012437;
 
 body {
-  background: @green;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans';
+  background: @lightgrey;
 }
 
 #container {
@@ -78,10 +78,16 @@ body {
   }
 }
 
+.wrapper {
+  .clearfix;
+  width: 1020px;
+  margin: 0 auto;
+}
 
 header {
   background: @navy;
   color: white;
+  position: relative;
   ul {
     list-style: none;
     padding: 0;
@@ -101,25 +107,72 @@ header {
       margin-right: 0;
     }
   }
-  ul {
+  .wrapper ul {
     opacity: 0;
     width: 0;
+    li {
+      cursor: pointer;
+      &:hover {
+        color: @green;
+      }
+    }
   }
   .first {
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     padding-right: 20px;
     font-size: 16px;
-    transition: font-size 0.2s ease-in;
+    transition: font-size 0.1s ease-in;
+    cursor: pointer;
+    &:hover {
+      color: @green;
+    }
   }
 }
 
-.wrapper {
-  .clearfix;
-  width: 1020px;
-  margin: 0 auto;
+.bottom {
+  text-align: center;
+  color: @green;
+  font-size: 13px;
+  ul {
+    width: auto;
+    opacity: 1;
+  }
+  li {
+    display: inline-block;
+    padding: 15px;
+    .icon {
+      color: #FFF;
+      font-size: 18px;
+    }
+  }
 }
 
+.social {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: opacity 0.1s ease-in;
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      line-height: 40px;
+    }
+  }
+}
+
+
+.dotdotdot {
+  line-height: 40px;
+  cursor: pointer;
+  &:before {
+    content: '...';
+  }
+  &:hover {
+    color: @green;
+  }
+}
 .nav-expanded[data-expanded=true] {
   .wrapper {
     margin-top: 20px;
@@ -133,7 +186,7 @@ header {
     width: ((100% - (4 * @gutter)) / 5);
   }
 
-  ul {
+  .wrapper ul {
     opacity: 1;
     width: auto;
     position: relative;
@@ -144,38 +197,165 @@ header {
     margin-bottom: 10px;
     padding: 0;
   }
-}
-
-
-.bottom {
-  text-align: center;
-  color: @green;
-  font-size: 13px;
-  li {
-    display: inline-block;
-    padding: 15px;
-    .icon {
-      color: #FFF;
-      font-size: 18px;
+  .social {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .dotdotdot {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: @green;
+    color: #FFF;
+    &:before {
+      .icon(@remove);
     }
   }
 }
+
 
 /*********************************************************
 * Main
 */
 
-
+#header {
+  background: #FFF;
+  padding: 5px;
+}
 #main {
-  .wrapper {
-    .clearfix;
-    width: 1020px;
-    margin: 40px auto;
-  }
+  font-weight: 200;
+  color: #FFF;
+}
+.top {
+  background: @green;
+}
+
+h1,
+h2 {
+  font-weight: 200;
+  margin-bottom: 20px;
 }
 
 h1 {
-  font-weight: 200;
+  font-size: 40px;
+  line-height: 1;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+h2 {
+  font-size: 25px;
+  margin: 1em 0;
+}
+
+video {
+  width: 400px;
+  float: right;
+  margin-left: 20px;
+}
+
+.top {
+  padding: 60px 0 30px 0;
+}
+
+/*********************************************************
+* Explanation section
+*/
+.dark {
+  background: @green;
+  .col {
+    width: (100% / 3);
+    float: left;
+    height: 300px;
+    padding: 20px;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
+#explore {
+  background: @darkgreen;
+}
+#make {
+  background: @yellow;
+}
+#teach {
+  background: @blue;
+}
+
+/*********************************************************
+* Featured
+*/
+
+.featured {
+  color: #555;
+  padding-bottom: 40px;
+
+  h2 {
+    margin: 1em 0;
+  }
+}
+
+.featured-make {
+  background: @navy;
   color: #FFF;
-  font-size: 45px;
+  padding: 20px;
+  position: relative;
+  width: 67%;
+  .clearfix;
+}
+.thumbnail {
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+.title {
+  font-size: 24px;
+}
+.likes {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px;
+}
+.author-date {
+  margin: 1em 0;
+  font-size: 14px;
+}
+.description {
+  margin: 1em 0;
+}
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+.view-profile {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: inline-block;
+  padding: 10px 15px;
+  background: @green;
+  font-size: 20px;
+}
+
+/*********************************************************
+* Footer
+*/
+
+footer {
+  background: #FFF;
+  color: #555;
+  padding: 20px;
+  text-align: center;
 }

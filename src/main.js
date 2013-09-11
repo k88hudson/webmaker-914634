@@ -4,24 +4,21 @@ requirejs.config({
     main: '../src/main',
     jade: 'jade/runtime',
     templates: '../templates',
-    jquery: 'jquery/jquery',
-    jqueryEasing: 'jquery.easing/js/jquery.easing'
-  },
-  shim: {
-    jqueryEasing: ['jquery']
+    jquery: 'jquery/jquery'
   }
 });
 
-require(['jquery','jqueryEasing'], function ($) {
+require(['jquery'], function ($) {
   var $container = $('#container');
   var $subNav = $('.nav-expanded');
+  var $dotdotdot = $('.dotdotdot');
   var navHeight = $subNav.height();
-  var collapsedHeight = 60;
+  var collapsedHeight = 40;
 
   $subNav.css('height', collapsedHeight);
   $subNav.attr('data-expanded', 'false');
   $container.attr('data-loading', 'done');
-  $subNav.on('click', function () {
+  $dotdotdot.on('click', function () {
     var isExpanding = $subNav.attr('data-expanded') === 'false';
     var height = isExpanding ? navHeight : collapsedHeight;
     $('.nav-expanded').animate({
@@ -31,7 +28,7 @@ require(['jquery','jqueryEasing'], function ($) {
   });
 
   function isMobile() {
-   var w = window.innerWidth;
+    var w = window.innerWidth;
     if (w < 1020) {
       document.body.setAttribute('data-mobile', true);
     } else {
