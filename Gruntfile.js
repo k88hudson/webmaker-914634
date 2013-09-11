@@ -11,7 +11,7 @@ module.exports = function (grunt) {
       },
       production: {
         src: 'src/**/*.less',
-        dest: 'dist/main-min.css',
+        dest: 'dist/main.css',
         options: {
           yuicompress: true
         }
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
           paths: {
             'templates': '../dist/templates'
           },
-          out: './dist/main.min.js'
+          out: './dist/main.js'
         }
       }
     }
